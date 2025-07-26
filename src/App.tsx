@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 import { Property, PropertyType } from './models/property';
+import PropertyCard from './components/PropertyCard';
 
 function App() {
 
@@ -39,14 +40,10 @@ function App() {
 
   return (
     <div className="App">
-      {properties.map((property) => (
-        <div key={property.id}>
-          <div>{property.title}</div>
-          <div>{property.description}</div>
-          <div>{property.price}</div>
-          <div>{property.address.street}</div>
-          <hr/>
-        </div>
+      {properties.map((house) => (
+        <>
+        <PropertyCard property={house} />
+        </>  
       ))}
     </div>
   );
